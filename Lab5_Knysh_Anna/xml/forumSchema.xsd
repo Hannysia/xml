@@ -1,0 +1,106 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://www.example.com/forum"
+          targetNamespace="http://www.example.com/forum">
+
+  <xs:element name="forum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="xs:string"/>
+        <xs:element name="header_subject" type="xs:string"/>
+        <xs:element name="article" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="meta_data">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="authors_image" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xs:element name="user_data">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="user_article">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="article_name" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+
+                          <xs:element name="user_full_information">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="username" type="xs:string"/>
+                                <xs:element name="date" type="xs:string"/>
+                                <xs:element name="time" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <xs:element name="content">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="theme" type="xs:string"/>
+                    <xs:element name="description" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <xs:element name="comments">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="comment" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+
+                          <xs:element name="commentator_data">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="user_article">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="to_article" type="xs:string"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+
+                                <xs:element name="user_full_information">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="username" type="xs:string"/>
+                                      <xs:element name="date" type="xs:string"/>
+                                      <xs:element name="time" type="xs:string"/>
+                                      <xs:element name="response" type="xs:string"/>
+
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+
+                          <xs:element name="authors_image" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="category" type="xs:string"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,20 @@
+<!ELEMENT forum (header, header_description, article*)>
+<!ELEMENT header (#PCDATA)>
+<!ELEMENT header_description (#PCDATA)>
+<!ELEMENT article (meta_data, content, authors_image?, comments?)>
+<!ELEMENT meta_data (user_date)>
+<!ELEMENT user_date (user_article, user_full_information)>
+<!ELEMENT user_article (article_name)>
+<!ELEMENT user_full_information (username, date, time, response?)>
+<!ELEMENT article_name (#PCDATA)>
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ELEMENT content (topic, article_body)>
+<!ELEMENT topic (#PCDATA)>
+<!ELEMENT article_body (#PCDATA)>
+<!ELEMENT authors_image (#PCDATA)>
+<!ELEMENT comments (comment*)>
+<!ELEMENT comment (commentator_data, authors_image?)>
+<!ELEMENT commentator_data (user_article, user_full_information)>
